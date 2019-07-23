@@ -1,0 +1,26 @@
+{
+  "name": "code8525/response-json",
+  "description": "forms the answer for Phalcon API",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Code8525",
+      "email": "mail@mail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Phalcon\\": "src/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
