@@ -98,7 +98,12 @@ class RequestParams
     static public function getInit(string $name): ?int
     {
         $val = self::get($name);
-        return (int)(self::getFilter()->sanitize($val, 'int'));
+        if ($val === null)
+            return $val;
+        $val = self::getFilter()->sanitize($val, 'int');
+        if ($val === '')
+            return null;
+        return $val;
     }
 
     /**
