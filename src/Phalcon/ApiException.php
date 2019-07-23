@@ -3,16 +3,36 @@ declare(strict_types=1);
 
 namespace Phalcon;
 
+use Throwable;
+
 /**
  * Class ApiException
  * @package Phalcon
  */
-class ApiException
+class ApiException extends Exception
 {
 
-    public function __construct()
-    {
+    private $error;
 
+    /**
+     * ApiException constructor.
+     * @param string $error
+     * @param string $message
+     * @param int $code
+     * @param Throwable $previous
+     */
+    public function __construct(string $error, string $message, int $code = 0, Throwable $previous = null)
+    {
+        $this->error = $error;
+        parent::__construct($message, $code, $previous);
+    }
+
+    /**
+     * @return string
+     */
+    public function getError(): string
+    {
+        return $this->error;
     }
 
 }
