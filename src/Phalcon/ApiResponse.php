@@ -79,11 +79,9 @@ class ApiResponse
     {
         self::$jsonData["ok"] = false;
         self::$jsonData["error"] = $value;
-
-        if (is_null($message) === false) {
+        if ($message !== null) {
             self::$jsonData["message"] = $message;
         }
-
         return self::$jsonData;
     }
 
