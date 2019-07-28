@@ -30,7 +30,17 @@ class RequestParams
             self::$filter = new \Phalcon\Filter();
         return self::$filter;
     }
-//
+
+    /**
+     * @param string $name
+     * @return string
+     */
+    static public function getString(string $name): string
+    {
+        $val = self::get($name);
+        var_dump($val);
+        return (string)(self::getFilter()->sanitize($val, 'string'));
+    }
 
     /**
      * @param string $name
@@ -39,6 +49,7 @@ class RequestParams
     static public function getAlphaNum(string $name): string
     {
         $val = self::get($name);
+        var_dump($val);
         return (string)(self::getFilter()->sanitize($val, 'alphanum'));
     }
 
@@ -99,11 +110,11 @@ class RequestParams
     {
         $val = self::get($name);
         if ($val === null)
-            return $val;
+            return null;
         $val = self::getFilter()->sanitize($val, 'int');
         if ($val === '')
             return null;
-        return $val;
+        return (int)$val;
     }
 
     /**
