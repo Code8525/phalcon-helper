@@ -38,7 +38,7 @@ class RequestParams
     static public function getString(string $name): string
     {
         $val = self::get($name);
-        var_dump($val);
+        // var_dump($val);
         return (string)(self::getFilter()->sanitize($val, 'string'));
     }
 
@@ -49,7 +49,7 @@ class RequestParams
     static public function getAlphaNum(string $name): string
     {
         $val = self::get($name);
-        var_dump($val);
+        // var_dump($val);
         return (string)(self::getFilter()->sanitize($val, 'alphanum'));
     }
 
