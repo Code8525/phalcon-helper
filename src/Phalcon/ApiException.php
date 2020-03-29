@@ -40,6 +40,7 @@ class ApiException extends \Exception
         return $this->error;
     }
 
+
     /**
      * @return array|null
      */

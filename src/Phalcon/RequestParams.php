@@ -42,6 +42,7 @@ class RequestParams
         return self::$validation;
     }
 
+
     /**
      * @param string $name
      * @return string
