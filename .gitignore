@@ -1,8 +1,0 @@
-/cache/
-/config/development/
-.idea/
-index.php
-test/
-vendor/
-/vendor
-/composer.lock
